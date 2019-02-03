@@ -1,0 +1,5 @@
+1. Write a program to find the size of various datatypes on your system, display the address and value of variable using ‘&’ and ‘*’ operators
+2. Write a program to display memory map of pointer to a pointer with appropriate messages
+3. Write a program to perform arithmetic operations on two numbers using pointers
+4. Write a program to demonstrate pointer arithmetic
+5. Write a program to compute sum of array elements using pointer
