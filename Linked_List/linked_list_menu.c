@@ -53,32 +53,32 @@
     }
      
     void insert_at_begin(int x) {
-       struct node *t;
+       struct node *newnode;
        
-       t = (struct node*)malloc(sizeof(struct node));
+       newnode = (struct node*)malloc(sizeof(struct node));
        count++;
-         
+         //If the linked list is empty, check this condition
        if (start == NULL) {
-          start = t;
-          start->data = x;
-          start->next = NULL;
+          start = newnode;//start points towards the new node
+          start->data = x;//store the data in x which is the new node data in start's data
+          start->next = NULL;//set pointer of start to null as it is the only element present
           return;
        }
        
-       t->data = x;
-       t->next = start;
-       start = t;
+       newnode->data = x;//if linked list is not empty then take the data stored in x and store it in newnode's data
+       newnode->next = start;//point the newnode's next to prev start
+       start = newnode;//change the start to current newnode
     }
      
     void insert_at_end(int x) {
-       struct node *t, *temp;
+       struct node *newnode, *temp;
        
-       t = (struct node*)malloc(sizeof(struct node));
+       newnode = (struct node*)malloc(sizeof(struct node));
        count++;
        
        if (start == NULL) {
-          start = t;
-          start->data = x;
+          start = newnode;
+          start->data = newnode;
           start->next = NULL;
           return;
        }
@@ -88,32 +88,32 @@
        while (temp->next != NULL)
           temp = temp->next;  
        
-       temp->next = t;
-       t->data    = x;
-       t->next    = NULL;
+       temp->next = newnode;
+       newnode->data    = x;
+       newnode->next    = NULL;
     }
      
     void traverse() {
-       struct node *t;
+       struct node *newnode;
        
-       t = start;
+       newnode = start;
        
-       if (t == NULL) {
+       if (newnode == NULL) {
           printf("Linked list is empty.\n");
           return;
        }
        
        printf("There are %d elements in linked list.\n", count);
        
-       while (t->next != NULL) {
-          printf("%d\n", t->data);
-          t = t->next;
+       while (newnode->next != NULL) {
+          printf("%d\n", newnode->data);
+          newnode = newnode->next;
        }
-       printf("%d\n", t->data);
+       printf("%d\n", newnode->data);
     }
      
     void delete_from_begin() {
-       struct node *t;
+       struct node *newnode;
        int n;
        
        if (start == NULL) {
@@ -122,16 +122,16 @@
        }
        
        n = start->data;
-       t = start->next;
+       newnode = start->next;
        free(start);
-       start = t;
+       start = newnode;
        count--;
        
        printf("%d deleted from beginning successfully.\n", n);
     }
      
     void delete_from_end() {
-       struct node *t, *u;
+       struct node *newnode, *u;
        int n;
          
        if (start == NULL) {
@@ -149,14 +149,14 @@
           return;
        }
        
-       t = start;
+       newnode = start;
        
-       while (t->next != NULL) {
-          u = t;
-          t = t->next;
+       while (newnode->next != NULL) {
+          u = newnode;
+          newnode = newnode->next;
        }
        
-       n = t->data;
+       n = newnode->data;
        u->next = NULL;
        free(t);
        
