@@ -17,44 +17,46 @@
     int main () {
        int input, data;
        
-       for (;;) {
-          printf("1. Insert an element at beginning of linked list.\n");
+       while(1) {
+          printf("\n1. Insert an element at beginning of linked list.\n");
           printf("2. Insert an element at end of linked list.\n");
           printf("3. Traverse linked list.\n");
           printf("4. Delete element from beginning.\n");
           printf("5. Delete element from end.\n");
           printf("6. Exit\n");
-         
+          printf("Enter your choice:\n");
           scanf("%d", &input);
          
-          if (input == 1) {
+         switch(input)
+         {
+          case 1:
              printf("Enter value of element\n");
              scanf("%d", &data);
              insert_at_begin(data);
-          }
-          else if (input == 2) {
+          
+          case 2:
              printf("Enter value of element\n");
              scanf("%d", &data);
              insert_at_end(data);
-          }
-          else if (input == 3)
+          
+          case 3:
              traverse();
-          else if (input == 4)
+          case 4:
              delete_from_begin();  
-          else if (input == 5)
+          case 5:
              delete_from_end();
-          else if (input == 6)
+          case 6:
              break;
-          else
+          default:
              printf("Please enter valid input.\n");      
        }
        
        return 0;
     }
      
-    void insert_at_begin(int x) {
+    void insert_at_begin(int x) 
+    {
        struct node *newnode;
-       
        newnode = (struct node*)malloc(sizeof(struct node));
        count++;
          //If the linked list is empty, check this condition
@@ -70,27 +72,24 @@
        start = newnode;//change the start to current newnode
     }
      
-    void insert_at_end(int x) {
+    void insert_at_end(int x) 
+    {
        struct node *newnode, *temp;
-       
        newnode = (struct node*)malloc(sizeof(struct node));
        count++;
        
        if (start == NULL) {
           start = newnode;
-          start->data = newnode;
+          start->data = x;
           start->next = NULL;
           return;
        }
-       
        temp = start;
-       
        while (temp->next != NULL)
-          temp = temp->next;  
-       
+       temp = temp->next;  
        temp->next = newnode;
-       newnode->data    = x;
-       newnode->next    = NULL;
+       newnode->data = x;
+       newnode->next = NULL;
     }
      
     void traverse() {
@@ -103,7 +102,7 @@
           return;
        }
        
-       printf("There are %d elements in linked list.\n", count);
+       printf("\nThere are %d elements in linked list.\n", count);
        
        while (newnode->next != NULL) {
           printf("%d\n", newnode->data);
@@ -114,25 +113,25 @@
      
     void delete_from_begin() {
        struct node *newnode;
-       int n;
+       int temp;
        
        if (start == NULL) {
           printf("Linked list is already empty.\n");
           return;
        }
        
-       n = start->data;
+       temp = start->data;
        newnode = start->next;
-       free(start);
+       free(start);//used to free allocated memory
        start = newnode;
        count--;
        
-       printf("%d deleted from beginning successfully.\n", n);
+       printf("%d deleted from beginning successfully.\n", temp);
     }
      
     void delete_from_end() {
        struct node *newnode, *u;
-       int n;
+       int temp;
          
        if (start == NULL) {
           printf("Linked list is already empty.\n");
@@ -142,10 +141,10 @@
        count--;
        
        if (start->next == NULL) {
-          n = start->data;
+          temp = start->data;
           free(start);
           start = NULL;
-          printf("%d deleted from end successfully.\n", n);
+          printf("%d deleted from end successfully.\n", temp);
           return;
        }
        
@@ -156,9 +155,9 @@
           newnode = newnode->next;
        }
        
-       n = newnode->data;
+       temp = newnode->data;
        u->next = NULL;
-       free(t);
+       free(newnode);
        
-       printf("%d deleted from end successfully.\n", n);
+       printf("%d deleted from end successfully.\n", temp);
     }

@@ -1,11 +1,10 @@
+                        //COLLEGE PROGRAM(CONTAINS ERRORS)  
 #include <stdio.h>
 #include <stdlib.h>
-     
-int main()
-{
 	char stack[20];
 	int top = -1;
-	void push(char x){
+	void push(char x)
+	{
 		stack[++top]=x;
 	}
 
@@ -25,6 +24,8 @@ int main()
 		if(x=='*' || x=='/')
 			return 1;
 	}
+int main()
+{
 	char exp[20];
 	char *e,x;
 	printf("Enter expression:")
