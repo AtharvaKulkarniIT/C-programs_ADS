@@ -33,20 +33,23 @@
              printf("Enter value of element\n");
              scanf("%d", &data);
              insert_at_begin(data);
-          
+          	 break;
           case 2:
              printf("Enter value of element\n");
              scanf("%d", &data);
              insert_at_end(data);
-          
+          	 break;
           case 3:
              traverse();
+             break;
           case 4:
              delete_from_begin();  
+             break;
           case 5:
              delete_from_end();
-          case 6:
              break;
+          case 6:
+             exit(0);
           default:
              printf("Please enter valid input.\n");      
        }
