@@ -37,7 +37,7 @@ int binarySearch(int arr[], int l, int r, int x)
   
 int main() 
 {
-    int size=0,x=0;
+    int size,x;
     printf("Enter size of the array:");
     scanf("%d",&size); 
     int arr[size];
