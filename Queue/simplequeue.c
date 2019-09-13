@@ -12,8 +12,8 @@
 
     int main()
     {
-        int choice;
-        while (1)
+        int choice=0;
+        while (choice!=4)
         {
             printf("1.Insert element to queue \n");
             printf("2.Delete element from queue \n");
