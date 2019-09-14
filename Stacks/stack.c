@@ -58,8 +58,8 @@ int push()
 
 int main() 
 {
-   int key;
-   while(1)
+   int key=0;
+   while(key!=4)
    {
       printf("\n1. Push element in the stack \n");
       printf("2. Pop element from the stack \n");
