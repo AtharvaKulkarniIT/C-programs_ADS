@@ -3,7 +3,7 @@
 void sortarr(int arr[],int n)
 {
 	int j,key;
-	for (int i = 0; i < n; ++i)
+	for (int i = 1; i < n; ++i)
 	{
 		key = arr[i];
 		j=i-1;
