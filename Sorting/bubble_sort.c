@@ -2,9 +2,9 @@
 
 void swap(int *l,int *r)
 {
-	int temp=*l;
+	int temp = *l;
 	*l = *r;
-	*r=temp;
+	*r = temp;
 }
 
 void sortarr(int arr[],int size)
