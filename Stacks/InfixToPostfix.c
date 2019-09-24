@@ -31,6 +31,7 @@ int main()
     char *e, x;
     printf("Enter the expression :: ");
     scanf("%s",exp);
+    printf("\nPostfix expression:\n");
     e = exp;
     while(*e != '\0')
     {
