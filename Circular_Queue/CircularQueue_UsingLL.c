@@ -16,7 +16,7 @@ void display();
  
 int main()
 {
-	int chc;
+	int ch;
 	do
 	{
  	printf("\nMenu\n\t 1 to create the element : ");
@@ -24,9 +24,9 @@ int main()
 	printf("\n\t 3 to display the queue : ");
 	printf("\n\t 4 to exit from main : ");
 	printf("\nEnter your choice : ");
-	scanf("%d",&chc);
+	scanf("%d",&ch);
 	
-		switch(chc)
+		switch(ch)
 		{
 			case 1:
 	 		create();
