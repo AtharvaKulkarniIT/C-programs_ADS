@@ -19,18 +19,20 @@
        last = n - 1;
        middle = (first+last)/2;
      
-       while (first <= last) {
-          if (array[middle] < search)
+       while (first <= last)//test condition
+        {
+          if (array[middle] < search)//search right half of the array
              first = middle + 1;    
-          else if (array[middle] == search) {
+          else if (array[middle] == search)// if element is in the middle
+          {
              printf("%d found at location %d.\n", search, middle+1);
              break;
           }
-          else
+          else //search in the left half of the array
              last = middle - 1;
      
           middle = (first + last)/2;
-       }
+        }
        if (first > last)
           printf("Not found! %d isn't present in the list.\n", search);
      
