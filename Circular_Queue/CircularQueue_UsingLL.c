@@ -19,39 +19,35 @@ int main()
 	int ch;
 	do
 	{
- 	printf("\nMenu\n\t 1 to create the element : ");
-	printf("\n\t 2 to delete the element : ");
-	printf("\n\t 3 to display the queue : ");
-	printf("\n\t 4 to exit from main : ");
+ 	printf("\n*****************Circular Linked List**********************\n\t 1. Enqueue : ");
+	printf("\n\t 2. Dequeue : ");
+	printf("\n\t 3. Display : ");
+	printf("\n\t 4 Exit : ");
 	printf("\nEnter your choice : ");
 	scanf("%d",&ch);
 	
 		switch(ch)
 		{
 			case 1:
-	 		create();
+	 		enqueue();
 			break;
-	 	
-		 	case 2:
-	 		del();
+	 	 	case 2:
+	 		dequeue();
 	 		break;
-	 
-	 		case 3:
+	  		case 3:
 	 		display();
 	 		break;
-	 
 	 		case 4:
 	 		return 1;
-	 		
 			default:
-	 			printf("\nInvalid choice :");
+	 		printf("\nInvalid choice :");
 	 	}
 	}while(1);
  
 	return 0;
 }
  
-void create()
+void enqueue()
 {
 	node *newnode;
 	newnode=(node*)malloc(sizeof(node));
@@ -69,7 +65,7 @@ void create()
 	rear->next=front;
 }
  
-void del()
+void dequeue()
 {
 	temp=front;
 	if(front==NULL)
@@ -78,12 +74,12 @@ void del()
 	{
 		if(front==rear)
 		{
-			printf("\n%d",front->info);
+			printf("\nDeleted Element:%d",front->info);
 			front=rear=NULL;
 		}
 		else
 		{
-			printf("\n%d",front->info);
+			printf("\nDeleted Element:%d",front->info);
 			front=front->next;
 			rear->next=front;
 		}
@@ -97,12 +93,14 @@ void display()
 {
 	temp=front;
 	if(front==NULL)
-		printf("\nEmpty");
+		printf("\nQueue is Empty");
 	else
 	{
 		printf("\n");
-		for(;temp!=rear;temp=temp->next)
-			printf("\n%d address=%u next=%u\t",temp->info,temp,temp->next);
-			printf("\n%d address=%u next=%u\t",temp->info,temp,temp->next);
+		if(rear>=temp)
+		{
+			printf("%d",temp->info);
+			temp=temp->next;
+		}
 	}
 }
