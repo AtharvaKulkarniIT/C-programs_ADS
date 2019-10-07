@@ -14,7 +14,7 @@ int main()
     int queue[size];
     do
     {
-        printf("\n\n Circular Queue:\n1. Insert \n2. Delete\n3. Display\n0. Exit");
+        printf("\n Circular Queue:\n1. Insert \n2. Delete\n3. Display\n4. Exit");
         printf("\nEnter Choice 0-3? : ");
         scanf("%d", &ch);
         switch (ch)
@@ -30,6 +30,8 @@ int main()
             case 3:
                 display(queue);
                 break;
+            case 4:
+                return(1);
             default:
                 printf("Wrong Choice! Please enter again.\n");
         }
