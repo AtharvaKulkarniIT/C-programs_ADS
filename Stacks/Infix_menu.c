@@ -94,7 +94,8 @@ void Infix_to_Postfix(char infix[],char postfix[])
         {
       //      printf("@@%c,",head->data);
         //    x=pop();
-            while(precedence(item)<=precedence(head->data)){
+            while(precedence(item)<=precedence(head->data))
+            {
                 postfix[j]=head->data;
                 j++;
                 pop();
@@ -104,7 +105,8 @@ void Infix_to_Postfix(char infix[],char postfix[])
             push(item);
         }
         
-        else if(item==')'){
+        else if(item==')')
+        {
             //x=pop();
             while(head->data!='(')
             {
@@ -135,12 +137,15 @@ void Infix_to_Postfix(char infix[],char postfix[])
 }
 
 
-void Infix_to_Prefix(char infix[],char postfix[]){
+void Infix_to_Prefix(char infix[],char postfix[])
+{
     char rev_Infix[50],prefix[50];
     int len=strlen(infix),j=0;
    // printf("%d",len);
-    for(int i=len-1;i>=0;i--){
-        rev_Infix[j]=infix[i];j++;}
+    for(int i=len-1;i>=0;i--)
+    {
+        rev_Infix[j]=infix[i];j++;
+    }
  //   printf("%s",rev_Infix);
     j=0;
     Infix_to_Postfix(rev_Infix,postfix);
