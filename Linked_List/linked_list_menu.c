@@ -89,7 +89,7 @@
        }
        temp = start;
        while (temp->next != NULL)
-       temp = temp->next;  
+          temp = temp->next;  
        temp->next = newnode;
        newnode->data = x;
        newnode->next = NULL;
