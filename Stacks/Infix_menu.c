@@ -1,7 +1,7 @@
-#include<stdio.h>
-#include<ctype.h>
-#include<string.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
 
 struct node
 {
@@ -13,7 +13,7 @@ struct node
 void push(char input)
 {
     struct node *temp;
-    temp=(struct node*)malloc(sizeof(struct node*));
+    temp = (struct node*)malloc(sizeof(struct node*));
     if(head==NULL)
     {
         temp->data=input;
@@ -23,9 +23,9 @@ void push(char input)
     }
     else
     {
-        temp->data=input;
-        temp->next=head;
-        head=temp;
+        temp->data = input;
+        temp->next = head;
+        head = temp;
     //    printf("#%c\n",head->data);
     }
 }
