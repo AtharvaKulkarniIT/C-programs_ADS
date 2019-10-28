@@ -142,19 +142,20 @@ void Infix_to_Prefix(char infix[],char postfix[])
     char rev_Infix[50],prefix[50];
     int len=strlen(infix),j=0;
    // printf("%d",len);
-    for(int i=len-1;i>=0;i--)
+    for(int i=len-1;i>=0;i--)//reverse the infix expression
     {
-        rev_Infix[j]=infix[i];j++;
+        rev_Infix[j]=infix[i];
+        j++;
     }
  //   printf("%s",rev_Infix);
     j=0;
-    Infix_to_Postfix(rev_Infix,postfix);
-    for(int i=strlen(postfix)-1;i>=0;i--)
+    Infix_to_Postfix(rev_Infix,postfix);//find the postfix now
+    for(int i=strlen(postfix)-1;i>=0;i--)//Reverse expression after finding postfix to get prefix
     {
         prefix[j]=postfix[i];
         j++;
     }
-    printf("Prefix Expression:%s",prefix);
+    printf("\nPrefix Expression:%s\n",prefix);
     
 }
 
@@ -174,7 +175,7 @@ int main()
                 break;
             case 2:
                 Infix_to_Postfix(infix,postfix);
-                printf("Postfix Expression:%s",postfix);
+                printf("\nPostfix Expression:%s\n",postfix);
                 break;
             case 3:
                 Infix_to_Prefix(infix,postfix);
@@ -183,7 +184,7 @@ int main()
                 choice=4;
                 break;
             default: 
-                printf("Wrong Choice!!");
+                printf("\nWrong Choice!!\n");
         }
         
     }
