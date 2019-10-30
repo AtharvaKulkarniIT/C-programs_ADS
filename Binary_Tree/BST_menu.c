@@ -27,6 +27,8 @@ struct node* insert(struct node *root,int value)
 
 void inorder(struct node *root)
 {
+	int ht=1;
+	
 	printf("\n");
 }
 
@@ -35,7 +37,7 @@ int main()
 
 	struct node *root;
 	root = NULL;
-	int ch=1,value;
+	int ch=1,ch2,value;
 	while(ch!=4)
 	{
 		printf("\n******************BINARY SEARCH TREE*************************\n1.Insertion\n2.Traversal with recursion\n3.Traversal without recursion\n3.Height of the tree\n4.Exit\n");
@@ -47,6 +49,19 @@ int main()
 			scanf("%d",&value);
 			insert(root,value);
 			break;
+			case 2:
+			printf("1.Inorder Traversal\n2.Preorder Traversal\n3.Postorder Traversal\n");
+			scanf("%d",&ch2);
+			if(ch2==1)
+			inorder(root);
+			break;
+			else if(ch2==2)
+			inorder(root);
+			break;
+			else if(ch2==3)
+			inorder(root);
+			else
+				break;
 			case 4:
 			printf("You chose to exit.\n");
 			exit(0);
