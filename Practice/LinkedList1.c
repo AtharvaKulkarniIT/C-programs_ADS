@@ -10,6 +10,7 @@ int value;
 
 void insertbeg()
 {
+	newnode = (struct node*)malloc(sizeof(struct node));//used for allocating memory for ANY new node created.
 	printf("Enter element to be inserted:\n");
 	scanf("%d",&newnode->data);
 	if(head == NULL)
@@ -25,6 +26,7 @@ void insertbeg()
 
 void insertend()
 {
+	newnode = (struct node*)malloc(sizeof(struct node));//used for allocating memory for ANY new node created.
 	printf("Enter element to be inserted:\n");
 	scanf("%d",&newnode->data);
 	if(head == NULL)
@@ -59,19 +61,36 @@ void deletebeg()
 
 void deleteend()
 {
-	if(head == NULL)
-	{
-		printf("List is empty!\n");
-		return;
-	}
-	struct node *temp;
-	temp = (struct node*)malloc(sizeof(struct node));
-	temp = head;
-	while(temp->next != NULL)
-		temp = temp->next;
-	printf("Deleted element is: %d\n",temp->data );
-	temp = temp->next;
-}
+	struct node* del;
+	int temp;
+         
+       if (head == NULL) {
+          printf("Linked list is already empty.\n");
+          return;
+       }
+       
+       
+       if (head->next == NULL) {
+          temp = head->data;
+          free(head);
+          head = NULL;
+          printf("%d deleted from end successfully.\n", temp);
+          return;
+       }
+       
+       newnode = head;
+       
+       while (newnode->next != NULL) {
+          del = newnode;
+          newnode = newnode->next;
+       }
+       
+       temp = newnode->data;
+       del->next = NULL;
+       free(newnode);
+       
+       printf("%d deleted from end successfully.\n", temp);
+    }
 
 void traverse()
 {
@@ -84,7 +103,7 @@ void traverse()
 	temp = head;
 	while(temp->next != NULL)
 	{
-		printf("%d ", temp->data);
+		printf("%d->", temp->data);
 		temp = temp->next;
 	}
 
@@ -93,7 +112,6 @@ void traverse()
 
 int main()
 {
-	newnode = (struct node*)malloc(sizeof(struct node));//used for allocating memory for ANY new node created.
 	int key = 1;
 	while(key!=6)
 	{
