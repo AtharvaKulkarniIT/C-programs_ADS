@@ -11,15 +11,14 @@ int value;
 void insertbeg()
 {
 	printf("Enter element to be inserted:\n");
-	scanf("%d",&value);
+	scanf("%d",&newnode->data);
 	if(head == NULL)
 	{
-		head = newnode;
+		head = newnode;//allocating memory for head
+		head->data = newnode->data;//head now storing the newnode's data
 		head->next = NULL;
-		head->data = value;
 		return;
 	}
-	newnode->data = value;
 	newnode->next = head;
 	head = newnode;
 }
@@ -30,8 +29,9 @@ void insertend()
 	scanf("%d",&newnode->data);
 	if(head == NULL)
 	{
-		head->next = NULL;
 		head = newnode;
+		head->data = newnode->data;
+		head->next = NULL;
 		return;
 	}
 	struct node *temp;
@@ -81,11 +81,10 @@ void traverse()
 		return;
 	}
 	struct node *temp;
-	temp = (struct node*)malloc(sizeof(struct node));
 	temp = head;
 	while(temp->next != NULL)
 	{
-		printf("%d\n", temp->data);
+		printf("%d ", temp->data);
 		temp = temp->next;
 	}
 
@@ -94,7 +93,7 @@ void traverse()
 
 int main()
 {
-	newnode = (struct node*)malloc(sizeof(struct node));
+	newnode = (struct node*)malloc(sizeof(struct node));//used for allocating memory for ANY new node created.
 	int key = 1;
 	while(key!=6)
 	{
