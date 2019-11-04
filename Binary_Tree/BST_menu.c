@@ -6,6 +6,7 @@ struct node
 	int data;
 	struct node *left,*right;
 };
+struct node *root=NULL;
 
 struct node *newnode(int item) //Used to add new node to the tree
 {
@@ -15,7 +16,7 @@ struct node *newnode(int item) //Used to add new node to the tree
 	return temp;
 }
 
-struct node* insert(struct node *root,int value)
+struct node *insert(struct node *root,int value)
 {
 	if(root == NULL)
 		return newnode(value);
@@ -27,20 +28,53 @@ struct node* insert(struct node *root,int value)
 
 void inorder(struct node *root)
 {
-	int ht=1;
-	
-	printf("\n");
+	struct node *temp;
+	temp = root;
+	if(root==NULL)
+		return;
+	else
+	{
+		inorder(temp->left);
+		printf("%d->",temp->data);
+		inorder(temp->right);
+	}
+}
+
+void preorder(struct node *root)
+{
+	struct node *temp;
+	temp = root;
+	if(root==NULL)
+		return;
+	else
+	{
+		printf("%d->",temp->data);
+		preorder(temp->left);
+		preorder(temp->right);
+	}
+}
+
+void postorder(struct node *root)
+{
+	struct node *temp;
+	temp = root;
+	if(root==NULL)
+		return;
+	else
+	{
+		postorder(temp->left);
+		postorder(temp->right);
+		printf("%d->",temp->data);
+	}
 }
 
 int main()
 {
 
-	struct node *root;
-	root = NULL;
 	int ch=1,ch2,value;
 	while(ch!=4)
 	{
-		printf("\n******************BINARY SEARCH TREE*************************\n1.Insertion\n2.Traversal with recursion\n3.Traversal without recursion\n3.Height of the tree\n4.Exit\n");
+		printf("\n******************BINARY SEARCH TREE*************************\n1.Insertion\n2.Traversal with recursion\n3.Traversal without recursion\n4.Height of the tree\n5.Exit\n");
 		scanf("%d",&ch);
 		switch(ch)
 		{
@@ -53,16 +87,27 @@ int main()
 			printf("1.Inorder Traversal\n2.Preorder Traversal\n3.Postorder Traversal\n");
 			scanf("%d",&ch2);
 			if(ch2==1)
+			{
 			inorder(root);
 			break;
+			}
 			else if(ch2==2)
+			{
 			inorder(root);
 			break;
+			}
 			else if(ch2==3)
+			{
 			inorder(root);
+			}
 			else
-				break;
+			break;
+			case 3:
+
+			break;
 			case 4:
+			exit(0);
+			case 5:
 			printf("You chose to exit.\n");
 			exit(0);
 			default:
