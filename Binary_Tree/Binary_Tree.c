@@ -7,6 +7,7 @@ struct node
 	struct node *left,*right;
 };
 struct node *root = NULL;
+int height=0;
 
 struct node *create() 
 {
@@ -31,6 +32,7 @@ struct node *create()
 
 void inorder(struct node *root)
 {
+	height+=1;
 	struct node *temp;
 	temp = root;
 	if(root==NULL)
@@ -68,7 +70,7 @@ int main()
 	int ch;
 	while(1)
 	{
-		printf("\n1.Create a node\n2.Inorder\n3.Preorder\n4.Postorder\n5.Exit\n");
+		printf("\n1.Create a node\n2.Inorder\n3.Preorder\n4.Postorder\n5.Height\n6.Exit\n");
 		scanf("%d",&ch);
 		switch(ch)
 		{
@@ -81,6 +83,8 @@ int main()
 			case 4:
 			postorder(root);
 			case 5:
+			printf("Height:%d\n",height);
+			case 6:
 			exit(0);
 			default:
 			printf("Wrong value entered!\n");
