@@ -29,7 +29,7 @@
          
          switch(input)
          {
-          case 1:
+          case 1: 
              printf("Enter value of element\n");
              scanf("%d", &data);
              insert_at_begin(data);

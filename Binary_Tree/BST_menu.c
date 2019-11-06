@@ -20,9 +20,9 @@ struct node *insert(struct node *root,int value)
 {
 	if(root == NULL)
 		return newnode(value);
-	if(value<root->data)
+	else if(value<root->data)
 		root->left = insert(root->left,value);//recursion used
-	if(value>root->data)
+	else
 		root->right = insert(root->right,value);//recursion used
 }
 
@@ -32,12 +32,9 @@ void inorder(struct node *root)
 	temp = root;
 	if(root==NULL)
 		return;
-	else
-	{
-		inorder(temp->left);
-		printf("%d->",temp->data);
-		inorder(temp->right);
-	}
+	inorder(temp->left);
+	printf("%d->",temp->data);
+	inorder(temp->right);
 }
 
 void preorder(struct node *root)
@@ -46,12 +43,9 @@ void preorder(struct node *root)
 	temp = root;
 	if(root==NULL)
 		return;
-	else
-	{
-		printf("%d->",temp->data);
-		preorder(temp->left);
-		preorder(temp->right);
-	}
+	printf("%d->",temp->data);
+	preorder(temp->left);
+	preorder(temp->right);
 }
 
 void postorder(struct node *root)
@@ -60,12 +54,9 @@ void postorder(struct node *root)
 	temp = root;
 	if(root==NULL)
 		return;
-	else
-	{
-		postorder(temp->left);
-		postorder(temp->right);
-		printf("%d->",temp->data);
-	}
+	postorder(temp->left);
+	postorder(temp->right);
+	printf("%d->",temp->data);
 }
 
 int main()
