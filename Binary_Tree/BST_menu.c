@@ -1,108 +1,118 @@
-#include <stdio.h>
-#include <stdlib.h>
+ #include <stdio.h>
+  #include <stdlib.h>
 
-struct node
-{
-	int data;
-	struct node *left,*right;
-};
-struct node *root=NULL;
+  struct tnode {
+        int data;
+        struct tnode *left, *right;
+  };
 
-struct node *newnode(int item) //Used to add new node to the tree
-{
-	struct node* temp = (struct node*)malloc(sizeof(struct node));
-	temp->data = item;
-	temp->left = temp->right = NULL;
-	return temp;
-}
+  struct tnode *root = NULL;
 
-struct node *insert(struct node *root,int value)
-{
-	if(root == NULL)
-		return newnode(value);
-	else if(value<root->data)
-		root->left = insert(root->left,value);//recursion used
-	else
-		root->right = insert(root->right,value);//recursion used
-}
+  /* creating node of the tree  and fill the given data */
+  struct tnode * createNode(int data) {
+        struct tnode *newNode;
+        newNode  = (struct tnode *) malloc(sizeof(struct tnode));
+        newNode->data = data;
+        newNode->left = NULL;
+        newNode->right = NULL;
+        return (newNode);
+  }
 
-void inorder(struct node *root)
-{
-	struct node *temp;
-	temp = root;
-	if(root==NULL)
-		return;
-	inorder(temp->left);
-	printf("%d->",temp->data);
-	inorder(temp->right);
-}
+  /* inserting a new node into the tree */
+  void insertion(struct tnode **node, int data) {
+        if (!*node) {
+                *node = createNode(data);
+        } else if (data < (*node)->data) {
+                insertion(&(*node)->left, data);
+        } else if (data > (*node)->data) {
+                insertion(&(*node)->right, data);
+        }
+  }
 
-void preorder(struct node *root)
-{
-	struct node *temp;
-	temp = root;
-	if(root==NULL)
-		return;
-	printf("%d->",temp->data);
-	preorder(temp->left);
-	preorder(temp->right);
-}
+  /* inorder tree traversal */
+  void inOrder(struct tnode *node) {
+        if (node) {
+                inOrder(node->left);
+                printf("%d  ", node->data);
+                inOrder(node->right);
+        }
+        return;
+  }
+  /* pre order tree traversal */
+  void preOrder(struct tnode *node) {
+        if (node) {
+                printf("%d  ", node->data);
+                preOrder(node->left);
+                preOrder(node->right);
+        }
+        return;
+  }
+  /* post order tree traversal */
+  void postOrder(struct tnode *node) {
+        if (node) {
+                postOrder(node->left);
+                postOrder(node->right);
+                printf("%d  ", node->data);
+        }
+        return;
+  }
 
-void postorder(struct node *root)
-{
-	struct node *temp;
-	temp = root;
-	if(root==NULL)
-		return;
-	postorder(temp->left);
-	postorder(temp->right);
-	printf("%d->",temp->data);
-}
 
-int main()
-{
 
-	int ch=1,ch2,value;
-	while(ch!=4)
-	{
-		printf("\n******************BINARY SEARCH TREE*************************\n1.Insertion\n2.Traversal with recursion\n3.Traversal without recursion\n4.Height of the tree\n5.Exit\n");
-		scanf("%d",&ch);
-		switch(ch)
-		{
-			case 1:
-			printf("Enter value to be inserted\n");
-			scanf("%d",&value);
-			insert(root,value);
-			break;
-			case 2:
-			printf("1.Inorder Traversal\n2.Preorder Traversal\n3.Postorder Traversal\n");
-			scanf("%d",&ch2);
-			if(ch2==1)
-			{
-			inorder(root);
-			break;
-			}
-			else if(ch2==2)
-			{
-			inorder(root);
-			break;
-			}
-			else if(ch2==3)
-			{
-			inorder(root);
-			}
-			else
-			break;
-			case 3:
+int height(struct tnode *node)  
+{ 
+   if (node==NULL)  
+       return 0; 
+   else 
+   { 
+       /* compute the depth of each subtree */
+       int lDepth = height(node->left); 
+       int rDepth = height(node->right); 
+  
+       /* use the larger one */
+       if (lDepth > rDepth)  
+           return(lDepth+1); 
+       else return(rDepth+1); 
+   } 
+}  
 
-			break;
-			case 4:
-			exit(0);
-			case 5:
-			printf("You chose to exit.\n");
-			exit(0);
-			default:
-			printf("Wrong value entered!\n");
-	}
-}
-}
+  int main() {
+        int data, ch,h;
+        while (1) {
+                printf("*****************Binary Search Tree*************************\n");
+                printf("\n1. Insertion\n2. Traversal(using recursion)\n");
+                printf("3. Traversal(without recursion)\n");
+                printf("4.Height\n5.Exit\nEnter your choice:");
+                scanf("%d", &ch);
+                switch (ch) {
+                        case 1:
+                                printf("Enter your data:");
+                                scanf("%d", &data);
+                                insertion(&root, data);
+                                break;
+                        case 2:
+                                printf("Inorder: ");
+                                inOrder(root);
+                                printf("\n");
+                                printf("Preorder: ");
+                                preOrder(root);
+                                printf("\n");
+                                printf("Postorder: ");
+                                postOrder(root);
+                                printf("\n");
+                                break;
+                        case 3:
+                                break;
+                        case 4:
+                                h= height(root);
+                                printf("Height is: %d\n",h );
+                                break;
+                        case 5:
+                                exit(0);
+                        default:
+                                printf("You have  entered a wrong option\n");
+                                break;
+                }
+        }
+        return 0;
+  }
