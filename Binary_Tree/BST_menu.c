@@ -1,7 +1,8 @@
  #include <stdio.h>
   #include <stdlib.h>
 
-  struct tnode {
+  struct tnode 
+  {
         int data;
         struct tnode *left, *right;
   };
@@ -9,7 +10,8 @@
   struct tnode *root = NULL;
 
   /* creating node of the tree  and fill the given data */
-  struct tnode * createNode(int data) {
+  struct tnode * createNode(int data) 
+  {
         struct tnode *newNode;
         newNode  = (struct tnode *) malloc(sizeof(struct tnode));
         newNode->data = data;
@@ -19,19 +21,27 @@
   }
 
   /* inserting a new node into the tree */
-  void insertion(struct tnode **node, int data) {
-        if (!*node) {
+  void insertion(struct tnode **node, int data) 
+  {
+        if (!*node)
+         {
                 *node = createNode(data);
-        } else if (data < (*node)->data) {
+        } 
+        else if (data < (*node)->data)
+         {
                 insertion(&(*node)->left, data);
-        } else if (data > (*node)->data) {
+        } 
+        else if (data > (*node)->data) 
+        {
                 insertion(&(*node)->right, data);
         }
   }
 
   /* inorder tree traversal */
-  void inOrder(struct tnode *node) {
-        if (node) {
+  void inOrder(struct tnode *node) 
+  {
+        if (node) 
+        {
                 inOrder(node->left);
                 printf("%d  ", node->data);
                 inOrder(node->right);
@@ -39,8 +49,10 @@
         return;
   }
   /* pre order tree traversal */
-  void preOrder(struct tnode *node) {
-        if (node) {
+  void preOrder(struct tnode *node)
+   {
+        if (node) 
+        {
                 printf("%d  ", node->data);
                 preOrder(node->left);
                 preOrder(node->right);
@@ -48,8 +60,10 @@
         return;
   }
   /* post order tree traversal */
-  void postOrder(struct tnode *node) {
-        if (node) {
+  void postOrder(struct tnode *node) 
+  {
+        if (node)
+         {
                 postOrder(node->left);
                 postOrder(node->right);
                 printf("%d  ", node->data);
@@ -78,13 +92,15 @@ int height(struct tnode *node)
 
   int main() {
         int data, ch,h;
-        while (1) {
+        while (1)
+         {
                 printf("*****************Binary Search Tree*************************\n");
                 printf("\n1. Insertion\n2. Traversal(using recursion)\n");
                 printf("3. Traversal(without recursion)\n");
                 printf("4.Height\n5.Exit\nEnter your choice:");
                 scanf("%d", &ch);
-                switch (ch) {
+                switch (ch) 
+                {
                         case 1:
                                 printf("Enter your data:");
                                 scanf("%d", &data);
