@@ -72,7 +72,7 @@
         return;
   }
 
-
+4
 
 int height(struct tnode *node)  
 { 
