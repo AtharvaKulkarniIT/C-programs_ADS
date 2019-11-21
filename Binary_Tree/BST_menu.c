@@ -72,8 +72,6 @@
         return;
   }
 
-4
-
 int height(struct tnode *node)  
 { 
    if (node==NULL)  
