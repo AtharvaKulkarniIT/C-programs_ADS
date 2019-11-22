@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<limits.h>
+#include<stdlib.h>
  
 
 //This is code for linear probing in open addressing.

@@ -87,14 +87,15 @@ void Infix_to_Postfix(char infix[],char postfix[])
         else if(isalnum(item))
         {
          //   printf("@,");
-            postfix[j]=item;
-            j++;
+            postfix[j]=item;//add all alphabets to the stack
+            j++;//increment j by 1
         }
-        else if(isOperator(item)==1)
+        else if(isOperator(item)==1)//check if the element is an operator 
         {
       //      printf("@@%c,",head->data);
         //    x=pop();
-            while(precedence(item)<=precedence(head->data))
+            while(precedence(item)<=precedence(head->data))//if precedence of current item is less than or equal to the one present on top of the stack, 
+                //add it to postfix then pop the top of stack.
             {
                 postfix[j]=head->data;
                 j++;
