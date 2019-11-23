@@ -41,21 +41,21 @@ int main()
 
 void enqueue(int queue[], int item)
 {
-    if ((front == 0 && rear == size - 1) || (front == rear + 1))
+    if ((front == 0 && rear == size - 1) || (front == rear + 1))//Queue full condition
     {
         printf("Queue is full");
         return;
     }
-    else if (front ==  - 1)
+    else if (front ==  - 1)//resetting front and rear if queue was previously empty
     {
         rear++;
         front++;
     }
-    else if (rear == size - 1 && front > 0)
+    else if (rear == size - 1 && front > 0)//if starting of queue is still empty despite rear pointing at last element
     {
         rear = 0;
     }
-    else
+    else// normal condition just increment rear
     {
         rear++;
     }
@@ -70,17 +70,17 @@ void display(int queue[])
         return; 
     } 
     printf("\nElements in Circular Queue are: "); 
-    if (rear >= front) 
+    if (rear >= front) //normally rear would be greater than front
     { 
         for (int i = front; i <= rear; i++) 
             printf("%d ",queue[i]); 
     } 
-    else
+    else // in cqueue rear can be in the starting thus less than front
     { 
-        for (int i = front; i < size; i++) 
+        for (int i = front; i < size; i++) //printing all elements from front ptr to end of queue
             printf("%d ", queue[i]); 
   
-        for (int i = 0; i <= rear; i++) 
+        for (int i = 0; i <= rear; i++) //elements left out in the starting will be printed till rear
             printf("%d ", queue[i]); 
     } 
 }
