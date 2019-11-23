@@ -91,15 +91,15 @@ void dequeue(int queue[])
     {
         printf("Queue is empty ");
     }
-    else if (front == rear)
+    else if (front == rear)//to reset front and rear if only 1 element present
     {
         printf("\n %d deleted", queue[front]);
         front =  - 1;
         rear =  - 1;
     }
-    else if (front == size-1) 
+    else if (front == size-1) //if we have reached end of queue then fron moves on to 0th element
         front = 0;
-    else
+    else//normal condition
     {
         printf("\n %d deleted", queue[front]);
         front++;

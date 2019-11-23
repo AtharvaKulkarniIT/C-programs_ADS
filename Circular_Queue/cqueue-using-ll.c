@@ -4,7 +4,7 @@
 typedef struct Node {
 	int info;
 	struct Node *next;
-}node;
+}node;//typedef used so that you can just type node instead of struct Node everytime in this case.
 
 node *front=NULL,*rear=NULL,*temp;
 
@@ -54,7 +54,7 @@ void enqueue() {
 		rear->next=newnode;
 		rear=newnode;
 	}
-	rear->next=front;
+	rear->next=front;//cqueue condition
 }
 
 void dequeue() {
@@ -62,7 +62,7 @@ void dequeue() {
 	if(front==NULL)
 		printf("\nUnderflow!\n");
 	else {
-		if(front==rear) {
+		if(front==rear) {//i.e. only 1 element present in the cqueue
 			printf("\nDeleted Element : %d\n",front->info);
 			front=rear=NULL;
 		}
