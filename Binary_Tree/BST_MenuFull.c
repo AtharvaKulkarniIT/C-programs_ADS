@@ -24,7 +24,8 @@ struct node* insert( struct node *root, int data){
 
     if(data < root->data){
         root->left = insert(root->left, data);
-    }else if(data > root->data){
+    }
+    else if(data > root->data){
         root->right = insert(root->right, data);
     }
 

@@ -95,7 +95,7 @@ void Infix_to_Postfix(char infix[],char postfix[])
       //      printf("@@%c,",head->data);
         //    x=pop();
             while(precedence(item)<=precedence(head->data))//if precedence of current item is less than or equal to the one present on top of the stack, 
-                //add it to postfix then pop the top of stack.
+                //add head's data to postfix array then pop the top of stack as its value is already stored now.
             {
                 postfix[j]=head->data;
                 j++;
@@ -103,7 +103,7 @@ void Infix_to_Postfix(char infix[],char postfix[])
             }
            // push(item);
    //         printf("\n%s",postfix);
-            push(item);
+            push(item);//push the current item in the stack now.
         }
         
         else if(item==')')
@@ -111,11 +111,10 @@ void Infix_to_Postfix(char infix[],char postfix[])
             //x=pop();
             while(head->data!='(')
             {
-                postfix[j]=head->data;
+                postfix[j]=head->data;//Add all items to the postfix array until '(' is encountered and pop them
                 j++;
             //    printf("%c",x);
-                
-                pop();
+              pop();
             }
         }
         i++;
