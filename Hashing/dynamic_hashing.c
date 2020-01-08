@@ -1,8 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int hashtable[100][2];
+	int checkarr[100];
+	int checkarr[100] = {0};
 void insert()
 {
+	int i,n;
 	printf("Enter value to be entered in the hashtable:\n");
 	scanf("%d",&n);
 	int hashvalue = n%100;
@@ -35,10 +39,7 @@ void display()
 
 int main()
 {
-	int hashtable[100][2];
-	int checkarr[100];
-	int checkarr[100] = {0};
-	int n,i,ch;
+	int i,ch;
 	do
 	{
 		printf("1.Insert\n2.Display\n3.Exit\n");
@@ -56,6 +57,6 @@ int main()
 			default:
 			printf("Wrong value entered!\n");
 		}
-	}while(ch!=3)
+	}while(ch!=3);
 
 }
