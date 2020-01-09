@@ -4,13 +4,14 @@
 int hashtable[100][2];
 	int checkarr[100];
 	int checkarr[100] = {0};
+
 void insert()
 {
-	int i,n;
+	int n;
 	printf("Enter value to be entered in the hashtable:\n");
 	scanf("%d",&n);
 	int hashvalue = n%100;
-	for(i=0;i<=hashvalue;i++)
+	for(int i=0;i<=hashvalue;i++)
 	{
 		if(checkarr[i]==0)
 			checkarr[i]=1;
@@ -39,7 +40,7 @@ void display()
 
 int main()
 {
-	int i,ch;
+	int ch;
 	do
 	{
 		printf("1.Insert\n2.Display\n3.Exit\n");
