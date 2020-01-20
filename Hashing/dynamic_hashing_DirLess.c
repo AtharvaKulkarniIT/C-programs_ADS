@@ -16,19 +16,22 @@ void insert()
     if(checkarr[i]==0)
       checkarr[i]=1;
   }
-  if(checkarr[hashvalue]==1)
-  {
     if (hashtable[hashvalue][0]=='\0')
       hashtable[hashvalue][0]=n;
-    else 
+    else if (hashtable[hashvalue][1]=='\0')
       hashtable[hashvalue][1]=n;
+    else if (hashtable[hashvalue][0] && hashtable[hashvalue][1]!='\0'){
+      if(hashtable[hashvalue][0]<n)
+        hashtable[hashvalue][0]=n;
+      else if(hashtable[hashvalue][1]<n)
+        hashtable[hashvalue][1]=n;
   }
 }
 
 void display()
 {
   printf("The hashtable:\n");
-  for(int i=0;i<hashvalue;i++)
+  for(int i=0;i<=hashvalue;i++)
   {
     for (int j = 0; j < 2; ++j)
     {
