@@ -41,7 +41,7 @@ int main()
 
 void enqueue(int queue[], int item)
 {
-    if ((front == 0 && rear == size - 1) || (front == rear + 1))//Queue full condition
+    if ((front == 0 && rear == size - 1) || (front >rear))//Queue full condition
     {
         printf("Queue is full");
         return;

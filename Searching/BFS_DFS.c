@@ -1,127 +1,159 @@
 #include<stdio.h>
-#include<stdlib.h>
- 
-#define MAX 100  
- 
-#define initial 1
-#define waiting 2
-#define visited 3
- 
-int n;    
-int adj[MAX][MAX];
-int state[MAX]; 
-void create_graph();
-void BF_Traversal();
-void BFS(int v);
- 
-int queue[MAX], front = -1,rear = -1;
-void insert_queue(int vertex);
-int delete_queue();
-int isEmpty_queue();
- 
-int main()
+
+int q[20],top=-1,front=-1,rear=-1,a[20][20],vis[20],stack[20];
+int dequeue();
+void enqueue(int item);
+void bfs(int s,int n);
+void dfs(int s,int n);
+void push(int item);
+int pop();
+
+void main()
 {
-	create_graph();
-	BF_Traversal();
-	return 0;
+int n,i,s,ch,j;
+char c,dummy;
+printf("ENTER THE NUMBER VERTICES ");
+scanf("%d",&n);
+for(i=1;i<=n;i++)
+{
+for(j=1;j<=n;j++)
+{
+printf("ENTER 1 IF %d HAS A NODE WITH %d ELSE 0 ",i,j);
+scanf("%d",&a[i][j]);
 }
- 
-void BF_Traversal()
-{
-	int v;
-	
-	for(v=0; v<n; v++) 
-		state[v] = initial;
-	
-	printf("Enter Start Vertex for BFS: \n");
-	scanf("%d", &v);
-	BFS(v);
 }
- 
-void BFS(int v)
+printf("THE ADJACENCY MATRIX IS\n");
+for(i=1;i<=n;i++)
 {
-	int i;
-	
-	insert_queue(v);
-	state[v] = waiting;
-	
-	while(!isEmpty_queue())
-	{
-		v = delete_queue( );
-		printf("%d ",v);
-		state[v] = visited;
-		
-		for(i=0; i<n; i++)
-		{
-			if(adj[v][i] == 1 && state[i] == initial) 
-			{
-				insert_queue(i);
-				state[i] = waiting;
-			}
-		}
-	}
-	printf("\n");
+for(j=1;j<=n;j++)
+{
+printf(" %d",a[i][j]);
 }
- 
-void insert_queue(int vertex)
-{
-	if(rear == MAX-1)
-		printf("Queue Overflow\n");
-	else
-	{
-		if(front == -1) 
-			front = 0;
-		rear = rear+1;
-		queue[rear] = vertex ;
-	}
+printf("\n");
 }
- 
-int isEmpty_queue()
+
+do
 {
-	if(front == -1 || front > rear)
-		return 1;
-	else
-		return 0;
+for(i=1;i<=n;i++)
+vis[i]=0;
+printf("\nMENU");
+printf("\n1.B.F.S");
+printf("\n2.D.F.S");
+printf("\nENTER YOUR CHOICE");
+scanf("%d",&ch);
+printf("ENTER THE SOURCE VERTEX :");
+scanf("%d",&s);
+
+switch(ch)
+{
+case 1:bfs(s,n);
+break;
+case 2:
+dfs(s,n);
+break;
 }
- 
-int delete_queue()
-{
-	int delete_item;
-	if(front == -1 || front > rear)
-	{
-		printf("Queue Underflow\n");
-		exit(1);
-	}
-	
-	delete_item = queue[front];
-	front = front+1;
-	return delete_item;
+printf("DO U WANT TO CONTINUE(Y/N) ? ");
+scanf("%c",&dummy);
+scanf("%c",&c);
+}while((c=='y')||(c=='Y'));
 }
- 
-void create_graph()
+
+
+
+void bfs(int s,int n)
 {
-	int count,max_edge,origin,destin;
- 
-	printf("Enter number of vertices : ");
-	scanf("%d",&n);
-	max_edge = n*(n-1);
- 
-	for(count=1; count<=max_edge; count++)
-	{
-		printf("Enter edge %d( -1 -1 to quit ) : ",count);
-		scanf("%d %d",&origin,&destin);
- 
-		if((origin == -1) && (destin == -1))
-			break;
- 
-		if(origin>=n || destin>=n || origin<0 || destin<0)
-		{
-			printf("Invalid edge!\n");
-			count--;
-		}
-		else
-		{
-			adj[origin][destin] = 1;
-		}
-	}
+int p,i;
+enqueue(s);
+vis[s]=1;
+p=dequeue();
+if(p!=0)
+printf(" %d",p);
+while(p!=0)
+{
+for(i=1;i<=n;i++)
+if((a[p][i]==1)&&(vis[i]==0))
+{
+enqueue(i);
+vis[i]=1;
+}
+p=dequeue();
+if(p!=0)
+printf(" %d ",p);
+}
+for(i=1;i<=n;i++)
+if(vis[i]==0)
+bfs(i,n);
+}
+
+
+void enqueue(int item)
+{
+if(rear==19)
+printf("QUEUE FULL");
+else
+{
+if(rear==-1)
+{
+q[++rear]=item;
+front++;
+}
+else
+q[++rear]=item;
+}
+}
+int dequeue()
+{
+int k;
+if((front>rear)||(front==-1))
+return(0);
+else
+{
+k=q[front++];
+return(k);
+}
+}
+
+
+
+void dfs(int s,int n)
+{
+int i,k;
+push(s);
+vis[s]=1;
+k=pop();
+if(k!=0)
+printf(" %d ",k);
+while(k!=0)
+{
+for(i=1;i<=n;i++)
+if((a[k][i]!=0)&&(vis[i]==0))
+{
+push(i);
+vis[i]=1;
+}
+k=pop();
+if(k!=0)
+printf(" %d ",k);
+}
+for(i=1;i<=n;i++)
+if(vis[i]==0)
+dfs(i,n);
+}
+void push(int item)
+{
+if(top==19)
+printf("Stack overflow ");
+else
+stack[++top]=item;
+}
+int pop()
+{
+int k;
+if(top==-1)
+return(0);
+else
+{
+k=stack[top--];
+return(k);
+}
 }

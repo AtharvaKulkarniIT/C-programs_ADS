@@ -1,10 +1,3 @@
-//
-//  spiral.c
-//  
-//
-//  Created by ANGELO MATHAI on 17/10/18.
-//
-
 #include <stdio.h>
 int main()
 {

@@ -2,6 +2,7 @@
 // Manhatten distance- Horizontal and vertical distance between 2 points on a grid 
 # include<stdio.h>
 # include<math.h>
+# include <stdlib.h>
 int MROWNO = 3;
 int MCOLNO=3;
 double INF= 999;
@@ -138,7 +139,6 @@ return 0;
 }
 if(testfinal(row,col,prow,pcol,last)==1)
 {
-
 return 1;
 }
 if(status[row][col]==1)
@@ -147,9 +147,9 @@ return 0;
 }
 int gnew=info[prow][pcol].cost1+1;
 double hnew= histr(row,  col,  last.rowno, last.colno); 
-double fnew=gnew+hnew;
+double fnew=gnew+hnew;//the final cost
 
-if(info[row][col].cost2==INF || fnew < info[row][col].cost2 +info[row][col].cost1) //diff
+if(info[row][col].cost2==INF || fnew < info[row][col].cost2 +info[row][col].cost1) //diff between each heuristic
 {
 
 *plast=*plast+1;
@@ -167,7 +167,6 @@ return -1;    //else garbage or 1 if not the end.
 
 int searchnode(int data[][4],store start,store last)
 {
-
 int i,j;
 for(i=0;i<=MROWNO;i++)
 {
@@ -210,12 +209,9 @@ status[i][j]=0;
    store data;
    int st=0;
    while(st <= qlast)
-   {
-   
+   {  
    printf("\ndata %d %d ",Q[st].rowno, Q[st].colno);
    st++;
-
-
    }
 
   store temp=Q[0];
@@ -303,7 +299,7 @@ for(i=0;i<=MROWNO;i++)
 for(j=0;j<=MCOLNO;j++)
 {
 
-//printf("%d ",data[i][j]);
+printf("%d ",data[i][j]);
 
 }
 printf("\n");
@@ -312,7 +308,7 @@ int test=testnodes(data);
 
 if(test==0)
 {
-printf("\nNode value should be 0 or 1");
+printf("\nNode value should be 0 or 1!\n");
 return 0;
 
 }

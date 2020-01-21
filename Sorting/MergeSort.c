@@ -13,7 +13,7 @@ void merge(int arr[], int l, int mid, int r)
     int p = 0; 
     int q = 0; 
     int k = l; //k set to first element in the array
-    while (p < n1 && q < n2) 
+    while (p < n1 && q < n2)
     { 
         if (L[p] <= R[q]) //compare left and right array elements
         { 
@@ -45,7 +45,7 @@ void merge(int arr[], int l, int mid, int r)
 
 void mergeSort(int arr[], int l, int r) 
 { 
-    if (l < r) 
+    if (l < r) //do this till l and r are the same element
     { 
         int mid = (l+r)/2; 
         mergeSort(arr, l, mid); 
