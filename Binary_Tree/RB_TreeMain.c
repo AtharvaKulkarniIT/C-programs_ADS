@@ -1,7 +1,7 @@
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<malloc.h>
+node *root=NULL;
 struct rbtree
 {
     int data;
@@ -19,7 +19,6 @@ node* accept(int data)//setting defaults for every new node
     n->parent=NULL;
     return(n);
 }
-node *root=NULL;
 
 void leftRotate(node *x)
 {
@@ -173,6 +172,48 @@ void insert(int data)
 
 }
 
+struct node * minValueNode(struct node* node)
+{
+    struct node* current = node;
+
+    while (current && current->left != NULL)
+        current = current->left;
+
+    return current;
+}
+
+void deletion()
+{
+	int data;
+	printf("Enter data to be deleted:\n");
+	scanf("%d",&data);
+	if (root == NULL) return root;
+
+    if (data < root->data)
+        root->left = delete(root->left, data);
+
+    else if (data > root->data)
+        root->right = delete(root->right, data);
+    else
+    {
+        if (root->left == NULL)
+        {
+            struct node *temp = root->right;
+            free(root);
+            return temp;
+        }
+        else if (root->right == NULL)
+        {
+            struct node *temp = root->left;
+            free(root);
+            return temp;
+        }
+        struct node* temp = minValueNode(root->right);
+        root->data = temp->data;
+        root->right = deletetion(root->right, temp->data);
+    }
+    return root;
+}
 
 void inorder(node *T)
 {
@@ -196,17 +237,18 @@ void main()
     node *p;
     while(1)
     {
-        printf("\n1.create\n2.insert\n3.display\n4.exit\nEnter your choice:");
+    	printf("**********************************RED-BLACK TREE*******************************\n");
+        printf("\n1.Create\n2.Insert\n3.Delete\n4.Display\n5.Exit\nEnter your choice:");
         scanf("%d",&c);
         switch(c)
         {
             case 1:
 
-                printf("Enter the no of nodes you want to insert in RB tree :");
+                printf("Enter the no of nodes you want to insert :");
                 scanf("%d",&n);
                 for(i=0;i<n;i++)
                 {
-                    printf("Enter the data ");
+                    printf("Enter the data: ");
                     scanf("%d",&val);
                     insert(val);
                 }
@@ -217,13 +259,17 @@ void main()
                 insert(val);
                 break;
             case 3:
+            	deletion();
+            	break;
+
+            case 4:
                 printf("Root is: %d---BLACK\n",root->data);
                 inorder(root);
                 break;
-            case 4:
+            case 5:
                 exit(1);
                 break;
-            default: printf("Invalid choice !");
+            default: printf("Invalid choice!\n Please Enter Again.");
 
         }
     }

@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="C_programs"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/adnan/Documents/Programming/C-programs/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/adnan/Documents/Programming/C-programs/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="C_programs">
+				<Option output="/home/adnan/Documents/Programming/C-programs/cmake-build-debug/C_programs" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/adnan/Documents/Programming/C-programs/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/adnan/Documents/Programming/C-programs/."/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 C_programs"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="C_programs/fast">
+				<Option output="/home/adnan/Documents/Programming/C-programs/cmake-build-debug/C_programs" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/adnan/Documents/Programming/C-programs/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/adnan/Documents/Programming/C-programs/."/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 C_programs/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/adnan/Documents/Programming/C-programs/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/adnan/Documents/Programming/C-programs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Arrays/matrix.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Arrays/min_max_avg.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Arrays/odd.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Arrays/odd_even.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Binary_Tree/BST_MenuFull.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Binary_Tree/BST_menu.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Binary_Tree/Binary_Tree.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Binary_Tree/MirrorBT.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Binary_Tree/RB_Tree.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Binary_Tree/RB_TreeMain.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Binary_Tree/prac.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Circular_Queue/CircularQueue_UsingArray.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Circular_Queue/cqueue-using-ll.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Circular_Queue/cqueue2UsingLL.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/CourseProject/A_Search_Algorithm.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Filehandling/file1.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Filehandling/file2.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Filehandling/file3.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Filehandling/file4.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Functions/alphabets.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Functions/factors.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Functions/palindrome.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Functions/prime.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Functions/sumofdigs.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Graphics/car.cpp">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Graphics/octagon.cpp">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Graphics/spiral.cpp">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Hashing/dynamic_hashingSanket.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Hashing/dynamic_hashing_DirLess.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Hashing/hashing.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Hashing/hashing_simple.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Linked_List/doubly_LL.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Linked_List/linked_list_menu.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Linked_List/practice.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Linked_List/single_linked_list.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/LoopsandConditionals/dec_bin.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/LoopsandConditionals/distance.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/LoopsandConditionals/great_nos.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/LoopsandConditionals/interest.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/LoopsandConditionals/prime.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/LoopsandConditionals/profit.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Pointers/arithmetic2nos.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Pointers/memorymap.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Pointers/pointer_operations.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Pointers/pointerarithmetic.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Pointers/pointerarrsum.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Pointers/sizeof.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Practice/LinkedList1.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Practice/Stack1_usingLL.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Practice/prac.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Queue/PizzaDelivery.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Queue/queue_using_LL.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Queue/simplequeue.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Searching/BFS_DFS.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Searching/BinarySearch.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Searching/fibonacci_search.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Searching/search_menu.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Sorting/MergeSort.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Sorting/bubble_sort.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Sorting/insertion_sort.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Sorting/selection_sort.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Sorting/sorting_menu.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Stacks/InfixToPostfix.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Stacks/Infix_menu.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Stacks/Stack.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Stacks/Stack_using_LL.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Structures/complexarith.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Structures/pcspecs.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Structures/player.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/Structures/schoolmarks.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/areafunc.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/averageruns.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/avgmarks.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/case_file.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/complexadd.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/consonants.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/copy.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/factorial.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/factors.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/file.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/file5.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/file6.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/file7.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/file8.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/file9.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/first.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/info.h">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/oddevenarr.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/passing_values.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/pattern.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/percentage.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/player2.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/prime.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/product.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/ptrinfo.h">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/quadratic.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/referenceswap.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/refptr.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/sequence.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/smallestelement.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/sortingfile.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/strctroots.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/stringpalin.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/stringrev.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/structdob.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/structptr.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/structure1.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/sum_avg.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/tic_tac_toe.c">
+			<Option target="C_programs"/>
+		</Unit>
+		<Unit filename="/home/adnan/Documents/Programming/C-programs/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

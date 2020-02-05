@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/adnan/Documents/Programming/C-programs/Graphics/car.cpp
+simplecpp
+-
+
+/home/adnan/Documents/Programming/C-programs/Graphics/octagon.cpp
+simplecpp
+-
+
+/home/adnan/Documents/Programming/C-programs/Graphics/spiral.cpp
+simplecpp
+-
+
