@@ -10,22 +10,22 @@ struct node {
 };
 
  
-struct node* MAKE_bin_HEAP();
-int bin_LINK(struct node*, struct node*);
+struct node* create_heap();
+int link(struct node*, struct node*);
 struct node* create_node(int);
-struct node* bin_HEAP_UNION(struct node*, struct node*);
-struct node* bin_HEAP_INSERT(struct node*, struct node*);
-struct node* bin_HEAP_MERGE(struct node*, struct node*);
-struct node* bin_HEAP_EXTRACT_MIN(struct node*);
-int REVERT_LIST(struct node*);
+struct node* bin_union(struct node*, struct node*);
+struct node* insert(struct node*, struct node*);
+struct node* merge(struct node*, struct node*);
+struct node* extract_min(struct node*);
+int revert_list(struct node*);
 int display(struct node*);
-struct node* FIND_NODE(struct node*, int);
-int bin_HEAP_DECREASE_KEY(struct node*, int, int);
-int bin_HEAP_DELETE(struct node*, int);
+struct node* find(struct node*, int);
+int decrease_key(struct node*, int, int);
+int delete(struct node*, int);
 
 int count = 1;
  
-struct node* MAKE_bin_HEAP() {
+struct node* create_heap() {
     struct node* np;
     np = NULL;
     return np;
@@ -34,7 +34,7 @@ struct node* MAKE_bin_HEAP() {
 struct node * H = NULL;
 struct node *Hr = NULL;
 
-int bin_LINK(struct node* y, struct node* z) {
+int link(struct node* y, struct node* z) {
     y->parent = z;
     y->sibling = z->child;
     z->child = y;
@@ -42,18 +42,18 @@ int bin_LINK(struct node* y, struct node* z) {
 }
 
 struct node* create_node(int k) {
-    struct node* p;//new node;
+    struct node* p;
     p = (struct node*) malloc(sizeof(struct node));
     p->n = k;
     return p;
 }
 
-struct node* bin_HEAP_UNION(struct node* H1, struct node* H2) {
+struct node* bin_union(struct node* H1, struct node* H2) {
     struct node* prev_x;
     struct node* next_x;
     struct node* x;
-    struct node* H = MAKE_bin_HEAP();
-    H = bin_HEAP_MERGE(H1, H2);
+    struct node* H = create_heap();
+    H = merge(H1, H2);
     if (H == NULL)
         return H;
     prev_x = NULL;
@@ -70,7 +70,7 @@ struct node* bin_HEAP_UNION(struct node* H1, struct node* H2) {
           {
             if (x->n <= next_x->n) {
                x->sibling = next_x->sibling;
-                bin_LINK(next_x, x);
+                link(next_x, x);
             }
              else
               {
@@ -78,7 +78,7 @@ struct node* bin_HEAP_UNION(struct node* H1, struct node* H2) {
                     H = next_x;
                 else
                     prev_x->sibling = next_x;
-                bin_LINK(x, next_x);
+                link(x, next_x);
                 x = next_x;
             }
         }
@@ -87,21 +87,21 @@ struct node* bin_HEAP_UNION(struct node* H1, struct node* H2) {
     return H;
 }
 
-struct node* bin_HEAP_INSERT(struct node* H, struct node* x) 
+struct node* insert(struct node* H, struct node* x) 
 {
-    struct node* H1 = MAKE_bin_HEAP();
+    struct node* H1 = create_heap();
     x->parent = NULL;
     x->child = NULL;
     x->sibling = NULL;
     x->degree = 0;
     H1 = x;
-    H = bin_HEAP_UNION(H, H1);
+    H = bin_union(H, H1);
     return H;
 }
 
-struct node* bin_HEAP_MERGE(struct node* H1, struct node* H2) 
+struct node* merge(struct node* H1, struct node* H2) 
 {
-    struct node* H = MAKE_bin_HEAP();
+    struct node* H = create_heap();
     struct node* y;
     struct node* z;
     struct node* a;
@@ -114,7 +114,7 @@ struct node* bin_HEAP_MERGE(struct node* H1, struct node* H2)
         if (z != NULL && y->degree <= z->degree)
             H = y;
         else if (z != NULL && y->degree > z->degree)
-            /* need some modifications here;the first and the else conditions can be merged together!!!! */
+            
             H = z;
         else
             H = y;
@@ -162,7 +162,7 @@ int display(struct node* H) {
     printf("\n");
 }
 
-struct node* bin_HEAP_EXTRACT_MIN(struct node* H1) 
+struct node* extract_min(struct node* H1) 
 {
     int min;
     struct node* t = NULL;
@@ -172,10 +172,10 @@ struct node* bin_HEAP_EXTRACT_MIN(struct node* H1)
     Hr = NULL;
     if (x == NULL) 
     {
-        printf("\nNOTHING TO EXTRACT");
+        printf("\nNothing to extract");
         return x;
     }
-    //    int min=x->n;
+    
     p = x;
     while (p->sibling != NULL) 
     {
@@ -197,18 +197,18 @@ struct node* bin_HEAP_EXTRACT_MIN(struct node* H1)
         t->sibling = x->sibling;
     if (x->child != NULL) 
     {
-        REVERT_LIST(x->child);
+        revert_list(x->child);
         (x->child)->sibling = NULL;
     }
-    H = bin_HEAP_UNION(H1, Hr);
+    H = bin_union(H1, Hr);
     return x;
 }
 
-int REVERT_LIST(struct node* y) 
+int revert_list(struct node* y) 
 {
     if (y->sibling != NULL) 
     {
-        REVERT_LIST(y->sibling);
+        revert_list(y->sibling);
         (y->sibling)->sibling = y;
     } 
     else 
@@ -217,7 +217,7 @@ int REVERT_LIST(struct node* y)
     }
 }
 
-struct node* FIND_NODE(struct node* H, int k) 
+struct node* find(struct node* H, int k) 
 {
     struct node* x = H;
     struct node* p = NULL;
@@ -228,30 +228,30 @@ struct node* FIND_NODE(struct node* H, int k)
     }
     if (x->child != NULL && p == NULL) 
     {
-        p = FIND_NODE(x->child, k);
+        p = find(x->child, k);
     }
     if (x->sibling != NULL && p == NULL) 
     {
-        p = FIND_NODE(x->sibling, k);
+        p = find(x->sibling, k);
     }
     return p;
 }
 
-int bin_HEAP_DECREASE_KEY(struct node* H, int i, int k) 
+int decrease_key(struct node* H, int i, int k) 
 {
     int temp;
     struct node* p;
     struct node* y;
     struct node* z;
-    p = FIND_NODE(H, i);
+    p = find(H, i);
     if (p == NULL) 
     {
-        printf("\nINVALID CHOICE OF KEY TO BE REDUCED");
+        printf("\nInvalid Choice of key to be reduced");
         return 0;
     }
     if (k > p->n) 
     {
-        printf("\nSORRY!THE NEW KEY IS GREATER THAN CURRENT ONE");
+        printf("\nThe new key entered is greater than the current one!");
         return 0;
     }
     p->n = k;
@@ -267,7 +267,7 @@ int bin_HEAP_DECREASE_KEY(struct node* H, int i, int k)
     }
 }
 
-int bin_HEAP_DELETE(struct node* H, int k) 
+int delete(struct node* H, int k) 
 {
     struct node* np;
     if (H == NULL) 
@@ -275,8 +275,8 @@ int bin_HEAP_DELETE(struct node* H, int k)
         printf("\nHeap Empty!");
         return 0;
     }
-    bin_HEAP_DECREASE_KEY(H, k, -1000);
-    np = bin_HEAP_EXTRACT_MIN(H);
+    decrease_key(H, k, -1000);
+    np = extract_min(H);
     if (np != NULL)
         printf("\nNode deleted successfully");
 }
@@ -294,21 +294,21 @@ int main()
     {
         scanf("%d", &m);
         np = create_node(m);
-        H = bin_HEAP_INSERT(H, np);
+        H = insert(H, np);
     }
     display(H);
     do 
     {
         printf("\n*******************************BINOMIAL HEAP***********************:-\n");
-        printf("\n1)Insert\n2)Delete\n3)display\n4)Exit\n");
+        printf("Insert\n2)Delete\n3)Display\n4)Exit\n");
         scanf("%d", &key);
         switch (key) 
         {
         case 1:
-                printf("\nEnter element to be inserted:");
+                printf("\nEnter element inserted:");
                 scanf("%d", &m);
                 p = create_node(m);
-                H = bin_HEAP_INSERT(H, p);
+                H = insert(H, p);
                 printf("\nNow heap is:\n");
                 display(H);
                 fflush(stdin);
@@ -317,7 +317,7 @@ int main()
         case 2:
                 printf("\nEnter key to be deleted: ");
                 scanf("%d", &m);
-                bin_HEAP_DELETE(H, m);
+                delete(H, m);
                 fflush(stdin);
                 scanf("%c", &ch);
             break;
